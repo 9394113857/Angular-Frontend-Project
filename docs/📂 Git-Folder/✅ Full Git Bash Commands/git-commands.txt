@@ -1,0 +1,11 @@
+# ✅ Go to your Angular project
+cd your-angular-project-folder
+
+# ✅ Create & switch to the new feature branch
+git checkout -b feature/angular-project-foundation
+
+# ✅ Stage all new files
+git add .
+
+# ✅ Push current branch to origin
+git push -u origin feature/initial-angular-setup
