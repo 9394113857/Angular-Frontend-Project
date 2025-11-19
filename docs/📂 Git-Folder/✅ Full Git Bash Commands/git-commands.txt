@@ -2,7 +2,7 @@
 cd your-angular-project-folder
 
 # ✅ Create & switch to the new feature branch
-git checkout -b feature/angular-project-foundation
+git checkout -b ffeature/initial-angular-setup
 
 # ✅ Stage all new files
 git add .
