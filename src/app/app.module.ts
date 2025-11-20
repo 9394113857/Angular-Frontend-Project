@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavaSpringBootComponent } from './components/java-spring-boot/java-spring-boot.component';
+import { FlaskRestApiComponent } from './components/flask-rest-api/flask-rest-api.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FakestoreComponent,
-    JavaSpringBootComponent
+    JavaSpringBootComponent,
+    FlaskRestApiComponent
   ],
   imports: [
     BrowserModule,
