@@ -10,13 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavaSpringBootComponent } from './components/java-spring-boot/java-spring-boot.component';
 import { FlaskRestApiComponent } from './components/flask-rest-api/flask-rest-api.component';
+import { DotnetRestapiComponent } from './components/dotnet-restapi/dotnet-restapi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FakestoreComponent,
     JavaSpringBootComponent,
-    FlaskRestApiComponent
+    FlaskRestApiComponent,
+    DotnetRestapiComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FakestoreComponent } from './components/fakestore/fakestore.component';
 import { JavaSpringBootComponent } from './components/java-spring-boot/java-spring-boot.component';
 import { FlaskRestApiComponent } from './components/flask-rest-api/flask-rest-api.component';
+import { DotnetRestapiComponent } from './components/dotnet-restapi/dotnet-restapi.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'flask-rest-api',component:FlaskRestApiComponent
+  },
+  {
+    path: 'dotnet-restapi',component:DotnetRestapiComponent
   }
 ];
 
