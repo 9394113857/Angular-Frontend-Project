@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JavaSpringBootComponent } from './components/java-spring-boot/java-spring-boot.component';
 import { FlaskRestApiComponent } from './components/flask-rest-api/flask-rest-api.component';
 import { DotnetRestapiComponent } from './components/dotnet-restapi/dotnet-restapi.component';
+import { DjangoRestapiComponent } from './components/django-restapi/django-restapi.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DotnetRestapiComponent } from './components/dotnet-restapi/dotnet-resta
     FakestoreComponent,
     JavaSpringBootComponent,
     FlaskRestApiComponent,
-    DotnetRestapiComponent
+    DotnetRestapiComponent,
+    DjangoRestapiComponent
   ],
   imports: [
     BrowserModule,
