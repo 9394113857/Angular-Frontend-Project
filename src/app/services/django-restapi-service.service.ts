@@ -1,35 +1,78 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DjangoRestapiServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Define the URL for the API endpoint
-  url = "http://localhost:8000/api/tasks/";
+  // Django endpoint (tasks)
+  private url = "http://localhost:8000/api/tasks/";
 
-  // Fetch tasks from the server and return an Observable of an array of tasks
+  /**
+   * Fetch all tasks
+   */
   fetchTasks(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+    return this.http.get<any[]>(this.url).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  // Post a new task to the server and return an Observable of the response
+  /**
+   * Create a new task
+   */
   postTask(body: any): Observable<any> {
-    return this.http.post<any>(this.url, body);
+    return this.http.post<any>(this.url, body).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  // Delete a task by its ID on the server and return an Observable of the response
+  /**
+   * Delete a task by ID
+   */
   deleteTask(id: number): Observable<any> {
-    return this.http.delete<any>(this.url + id + "/");
+    return this.http.delete<any>(`${this.url}${id}/`).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  // Update an existing task on the server and return an Observable of the response
+  /**
+   * Update a task by ID
+   */
   putTask(id: number, body: any): Observable<any> {
-    return this.http.put<any>(this.url + id + "/", body);
+    return this.http.put<any>(`${this.url}${id}/`, body).pipe(
+      catchError(this.handleError)
+    );
   }
-  
+
+  /**
+   * Centralized error handler for Django API
+   */
+  private handleError(error: HttpErrorResponse) {
+    console.error("Django API Error:", error);
+
+    if (error.error instanceof ErrorEvent) {
+      return throwError(() => new Error(`Client error: ${error.error.message}`));
+    } else {
+      let message = "Server error occurred";
+
+      switch (error.status) {
+        case 400:
+          message = "Invalid data (400)";
+          break;
+        case 404:
+          message = "Task not found (404)";
+          break;
+        case 500:
+          message = "Server crashed (500)";
+          break;
+      }
+
+      return throwError(() => new Error(message));
+    }
+  }
 }
