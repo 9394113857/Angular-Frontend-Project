@@ -11,7 +11,7 @@ export class DotnetRestapiServiceService {
   constructor(private http: HttpClient) {}
 
   // Base API URL for the .NET REST API (Users Endpoint)
-  private url = "http://localhost:7000/users";
+  private url = "http://localhost:5001/users";
 
   /**
    * Fetch all users.

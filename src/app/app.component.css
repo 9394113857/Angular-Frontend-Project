@@ -1,26 +1,41 @@
-ul li{
-    list-style: none;
+/* -------------------------------------- */
+/* Remove bullet points from list items   */
+/* -------------------------------------- */
+ul li{                      /* Target all <li> elements inside <ul> */
+    list-style: none;       /* Remove default bullet points */
 }
 
-ul li a{
-    text-decoration: none;
+/* -------------------------------------- */
+/* Remove underline from links in <li>    */
+/* -------------------------------------- */
+ul li a{                    /* Target <a> inside <li> */
+    text-decoration: none;  /* Remove underline from links */
 }
 
-ul{
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    background-color: rgb(138, 128, 128);
-    height: 40px;
+/* -------------------------------------- */
+/* Style the entire navigation bar <ul>   */
+/* -------------------------------------- */
+ul{                         /* The unordered list acts as the navbar */
+    display: flex;          /* Place items horizontally */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px;              /* Space between list items */
+    background-color: rgb(138, 128, 128); /* Navbar background color */
+    height: 40px;           /* Navbar height */
 }
 
-a{
-    line-height: 40px;
-    color: white;
-    margin: 0 20px;
-    padding: 10px 10px;
+/* -------------------------------------- */
+/* Style all <a> tags inside the navbar   */
+/* -------------------------------------- */
+a{                          /* General link styling */
+    line-height: 40px;      /* Vertically center text inside navbar */
+    color: white;           /* Text color */
+    margin: 0 20px;         /* Space around the link */
+    padding: 10px 10px;     /* Clickable area padding */
 }
 
-.active{
-    background-color: rgb(95, 103, 205);
+/* -------------------------------------- */
+/* Highlight the active navigation link   */
+/* -------------------------------------- */
+.active{                    /* Class for the active menu item */
+    background-color: rgb(95, 103, 205); /* Highlight color */
 }

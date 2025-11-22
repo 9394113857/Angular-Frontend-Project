@@ -1,20 +1,22 @@
+<!-- Navigation Menu -->
 <ul>
-  
+  <!-- Navigation Links -->
   <li>
     <a routerLink="/" routerLinkActive="active">FakeStore</a>
-  </li>
-  <li>
-    <a routerLink="/java-spring-boot" routerLinkActive="active">Java Spring Boot</a>
   </li>
   <li>
     <a routerLink="/flask-rest-api" routerLinkActive="active">Flask REST API</a>
   </li>
   <li>
     <a routerLink="/django-restapi" routerLinkActive="active">Django REST API</a>
+  </li> 
+  <li>
+    <a routerLink="/java-spring-boot" routerLinkActive="active">Java Spring Boot REST API</a>
+  </li>
   <li>
     <a routerLink="/dotnet-restapi" routerLinkActive="active">.NET REST API</a>
   </li>
-  
-</ul>
+</ul>                                         <!--  End of Navigation Menu -->
 
-<router-outlet></router-outlet>
+<!-- Router Outlet to display components based on the route -->
+<router-outlet></router-outlet>               <!-- End of Router Outlet -->
